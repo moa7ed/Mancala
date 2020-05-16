@@ -2,8 +2,8 @@ package com.me.mancala.models;
 
 public class LargePit extends Pit{
 
-    public LargePit() {
-        super(0);
+    public LargePit(Side side, int index) {
+        super(0, side, index);
     }
 
 }

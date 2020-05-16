@@ -1,12 +1,17 @@
 package com.me.mancala.models;
 
+import java.util.UUID;
+
 public class Game {
+    private final UUID uuid;
     private final Board board;
     private Player currentPlayer;
     private Player winner;
     private boolean gameOver;
 
     public Game(Board board) {
+        this.uuid = UUID.randomUUID();
+        this.winner = new Player("7amada");
         this.board = board;
         this.currentPlayer = this.board.getLowerSide().getPlayer();
         this.gameOver = false;
@@ -39,4 +44,9 @@ public class Game {
     public void setWinner(Player winner) {
         this.winner = winner;
     }
+
+    public UUID getUuid() {
+        return uuid;
+    }
+
 }

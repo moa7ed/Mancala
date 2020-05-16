@@ -1,15 +1,15 @@
 package com.me.mancala.models;
 
 public class Side {
-    private final SideType sideType;
     private final Pit[] pits;
-    private final LargePit largePit;
     private final Player player;
 
-    public Side(SideType sideType, Pit[] pits, Player player) {
-        this.sideType = sideType;
-        this.pits = pits;
-        this.largePit = new LargePit();
+    public Side(int pitsPerSide, Player player) {
+        this.pits = new Pit[pitsPerSide + 1]; // 1 more for the largePit
+        for (int i = 0 ; i < pitsPerSide ; i++) {
+            this.pits[i] = new SmallPit(this, i);
+        }
+        this.pits[pitsPerSide] = new LargePit(this, pitsPerSide);
         this.player = player;
     }
 
@@ -25,8 +25,15 @@ public class Side {
         return this.pits[pitIndex];
     }
 
+    public Pit getLargePit() {
+        return this.pits[pits.length-1];
+    }
+
     public boolean isEmpty() {
         for (Pit pit : this.pits) {
+            if (pit instanceof LargePit) {
+                continue;
+            }
             if (!pit.isEmpty()) {
                 return false;
             }

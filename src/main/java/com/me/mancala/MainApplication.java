@@ -1,7 +1,9 @@
 package com.me.mancala;
+import com.me.mancala.resources.GameResource;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
+import io.dropwizard.views.ViewBundle;
 
 public class MainApplication extends Application<MainConfiguration> {
     public static void main(String[] args) throws Exception {
@@ -15,13 +17,13 @@ public class MainApplication extends Application<MainConfiguration> {
 
     @Override
     public void initialize(Bootstrap<MainConfiguration> bootstrap) {
-        // nothing to do yet
+        bootstrap.addBundle(new ViewBundle<>());
     }
 
     @Override
     public void run(MainConfiguration configuration,
                     Environment environment) {
-        // nothing to do yet
+        environment.jersey().register(new GameResource());
     }
 
 }

@@ -1,8 +1,10 @@
 package com.me.mancala.models;
 
-public class LargePit extends Pit{
+import javax.annotation.Nonnull;
 
-    public LargePit(Side side, int index) {
+public class LargePit extends Pit {
+
+    public LargePit(@Nonnull Side side, int index) {
         super(0, side, index);
     }
 

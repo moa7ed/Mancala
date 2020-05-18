@@ -1,18 +1,29 @@
 package com.me.mancala.gameplay;
 
-import com.me.mancala.models.*;
+import com.me.mancala.gameplay.models.Move;
+import com.me.mancala.gameplay.models.StoneTransition;
+import com.me.mancala.models.Game;
+import com.me.mancala.models.LargePit;
+import com.me.mancala.models.Pit;
+import com.me.mancala.models.Player;
+import com.me.mancala.models.Side;
+import com.me.mancala.models.SmallPit;
 
+import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MoveExecutor {
+    @Nonnull
     private Game game;
 
-    public MoveExecutor(Game game) {
+    @Nonnull
+    public MoveExecutor(@Nonnull Game game) {
         this.game = game;
     }
 
-    public List<StoneTransition> applyMove(Move move) throws IllegalAccessException {
+    @Nonnull
+    public List<StoneTransition> applyMove(@Nonnull Move move) throws IllegalAccessException {
         if (this.game.isGameOver()) {
             throw new IllegalAccessException("Game is already over!");
         }
@@ -32,7 +43,48 @@ public class MoveExecutor {
         return stoneTransitions;
     }
 
-    private void checkIfGameOver(List<StoneTransition> stoneTransitions) {
+    @Nonnull
+    private List<StoneTransition> distributeStones(@Nonnull Player player, @Nonnull Pit pit) {
+        List<StoneTransition> stoneTransitions = new ArrayList<>();
+        int stones = pit.getStones();
+        Pit nextPit = pit;
+        while (stones > 0) {
+            nextPit = this.game.getBoard().nextPit(player, nextPit);
+            stoneTransitions.add(new StoneTransition(pit, nextPit, 1));
+            stones--;
+        }
+        return stoneTransitions;
+    }
+
+    private void appendLastBitSpecialCase(@Nonnull Player player, @Nonnull List<StoneTransition> stoneTransitions) {
+        Pit lastPit = stoneTransitions.get(stoneTransitions.size() - 1).getTo();
+        if (lastPit.getSide().getPlayer() == player && lastPit instanceof SmallPit && lastPit.getStones() == 1) {
+            stoneTransitions.add(new StoneTransition(
+                    lastPit,
+                    lastPit.getSide().getLargePit(),
+                    lastPit.getStones())
+            );
+            Pit oppositePit = this.game.getBoard().oppositePit(lastPit);
+            stoneTransitions.add(new StoneTransition(
+                    oppositePit,
+                    lastPit.getSide().getLargePit(),
+                    oppositePit.getStones())
+            );
+        }
+    }
+
+    private void updateCurrentPlayer(@Nonnull Player player, @Nonnull List<StoneTransition> stoneTransitions) {
+        Pit lastPit = stoneTransitions.get(stoneTransitions.size() - 1).getTo();
+        if (lastPit instanceof LargePit && lastPit.getSide().getPlayer() == player) {
+            return; // player should play again
+        }
+        this.game.nextPlayerTurn();
+    }
+
+    private void checkIfGameOver(@Nonnull List<StoneTransition> stoneTransitions) {
+        if (this.game.isGameOver()) {
+            return;
+        }
         boolean gameOver = false;
         if (this.game.getBoard().getLowerSide().isEmpty()) {
             moveRestOfStonesToMancala(this.game.getBoard().getUpperSide(), stoneTransitions);
@@ -45,21 +97,17 @@ public class MoveExecutor {
             int lowerPlayerStones = this.game.getBoard().getLowerSide().getLargePit().getStones();
             int upperPlayerStones = this.game.getBoard().getUpperSide().getLargePit().getStones();
             this.game.setGameOver(true);
-            Player winner;
             if (lowerPlayerStones < upperPlayerStones) {
-                winner = this.game.getBoard().getUpperSide().getPlayer();
+                this.game.setWinner(this.game.getBoard().getUpperSide().getPlayer());
             } else if (lowerPlayerStones > upperPlayerStones) {
-                winner = this.game.getBoard().getLowerSide().getPlayer();
-            } else {
-                winner = null; // tie
+                this.game.setWinner(this.game.getBoard().getLowerSide().getPlayer());
             }
-            this.game.setWinner(winner);
         }
     }
 
-    private void moveRestOfStonesToMancala(Side lowerSide, List<StoneTransition> stoneTransitions) {
-        Pit mancalaPit = lowerSide.getLargePit();
-        for (Pit pit : lowerSide.getPits()) {
+    private void moveRestOfStonesToMancala(@Nonnull Side side, @Nonnull List<StoneTransition> stoneTransitions) {
+        Pit mancalaPit = side.getLargePit();
+        for (Pit pit : side.getPits()) {
             if (pit instanceof LargePit) {
                 continue;
             }
@@ -67,56 +115,6 @@ public class MoveExecutor {
                 stoneTransitions.add(new StoneTransition(pit, mancalaPit, pit.getStones()));
             }
         }
-    }
-
-
-    private void updateCurrentPlayer(Player player, List<StoneTransition> stoneTransitions) {
-        Pit lastPit = stoneTransitions.get(stoneTransitions.size() - 1).getTo();
-        if (lastPit instanceof LargePit && lastPit.getSide().getPlayer() == player) {
-            return; // player should play again
-        }
-        Side oppositeSide = this.game.getBoard().oppositeSide(lastPit.getSide());
-        this.game.setCurrentPlayer(oppositeSide.getPlayer());
-    }
-
-    private void appendLastBitSpecialCase(Player player, List<StoneTransition> stoneTransitions) {
-        Pit lastPit = stoneTransitions.get(stoneTransitions.size() - 1).getTo();
-        if (lastPit instanceof SmallPit && lastPit.getStones() == 1) {
-            stoneTransitions.add(new StoneTransition(
-                    lastPit,
-                    lastPit.getSide().getLargePit(),
-                    lastPit.getStones())
-            );
-            Pit oppositePit = this.game.getBoard().oppositePit(lastPit);
-            stoneTransitions.add(new StoneTransition(
-                    oppositePit,
-                    lastPit.getSide().getLargePit(),
-                    lastPit.getStones())
-            );
-        }
-    }
-
-    private List<StoneTransition> distributeStones(Player player, Pit pit) {
-        List<StoneTransition> stoneTransitions = new ArrayList<>();
-        int stones = pit.getStones();
-        while (stones > 0) {
-            stoneTransitions.add(new StoneTransition(pit, nextPit(player, pit), 1));
-        }
-        return stoneTransitions;
-    }
-
-    private Pit nextPit(Player player, Pit pit) {
-        Pit toPit = pit;
-        if (toPit instanceof LargePit) {
-            toPit = this.game.getBoard().oppositeSide(toPit.getSide()).getPit(0);
-        } else {
-            toPit = toPit.getSide().getPit(toPit.getIndex() + 1);
-        }
-        // other player Mancala (skip)
-        if (toPit instanceof LargePit && toPit.getSide().getPlayer() != player) {
-            return nextPit(player, toPit);
-        }
-        return toPit;
     }
 
 }

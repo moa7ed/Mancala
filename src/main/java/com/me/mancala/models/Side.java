@@ -1,12 +1,16 @@
 package com.me.mancala.models;
 
+import javax.annotation.Nonnull;
+
 public class Side {
+    @Nonnull
     private final Pit[] pits;
+    @Nonnull
     private final Player player;
 
-    public Side(int pitsPerSide, Player player) {
+    public Side(int pitsPerSide, @Nonnull Player player) {
         this.pits = new Pit[pitsPerSide + 1]; // 1 more for the largePit
-        for (int i = 0 ; i < pitsPerSide ; i++) {
+        for (int i = 0; i < pitsPerSide; i++) {
             this.pits[i] = new SmallPit(this, i);
         }
         this.pits[pitsPerSide] = new LargePit(this, pitsPerSide);
@@ -17,6 +21,7 @@ public class Side {
         return pits;
     }
 
+    @Nonnull
     public Player getPlayer() {
         return player;
     }
@@ -26,7 +31,7 @@ public class Side {
     }
 
     public Pit getLargePit() {
-        return this.pits[pits.length-1];
+        return this.pits[pits.length - 1];
     }
 
     public boolean isEmpty() {
@@ -41,8 +46,4 @@ public class Side {
         return true;
     }
 
-    public enum SideType {
-        UPPER,
-        LOWER;
-    }
 }

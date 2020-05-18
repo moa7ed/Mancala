@@ -1,4 +1,5 @@
 package com.me.mancala.resources;
+
 import com.codahale.metrics.annotation.Timed;
 import com.me.mancala.gameplay.GameInitializer;
 import com.me.mancala.models.Game;
@@ -8,7 +9,11 @@ import com.me.mancala.views.GameView;
 
 import javax.annotation.Nonnull;
 import javax.validation.Valid;
-import javax.ws.rs.*;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 @Path("/games")

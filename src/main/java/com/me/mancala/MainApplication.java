@@ -1,6 +1,8 @@
 package com.me.mancala;
+
 import com.me.mancala.resources.GameResource;
 import io.dropwizard.Application;
+import io.dropwizard.assets.AssetsBundle;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 import io.dropwizard.views.ViewBundle;
@@ -18,6 +20,7 @@ public class MainApplication extends Application<MainConfiguration> {
     @Override
     public void initialize(Bootstrap<MainConfiguration> bootstrap) {
         bootstrap.addBundle(new ViewBundle<>());
+        bootstrap.addBundle(new AssetsBundle("/public", "/public"));
     }
 
     @Override

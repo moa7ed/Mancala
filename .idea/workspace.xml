@@ -1,7 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d1166cc9-fb51-4859-9883-8f9d65f3e270" name="Default Changelist" comment="" />
+    <list default="true" id="d1166cc9-fb51-4859-9883-8f9d65f3e270" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/dev.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/dev.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-reduced-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dependency-reduced-pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/me/mancala/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/me/mancala/MainApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/me/mancala/MainConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/me/mancala/MainConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/me/mancala/gameplay/GameDb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/me/mancala/gameplay/GameDb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/me/mancala/gameplay/GameInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/me/mancala/gameplay/GameInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/me/mancala/gameplay/MoveExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/me/mancala/gameplay/MoveExecutor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/me/mancala/gameplay/models/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/me/mancala/gameplay/models/Move.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/me/mancala/models/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/me/mancala/models/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/me/mancala/models/LargePit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/me/mancala/models/LargePit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/me/mancala/models/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/me/mancala/models/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/me/mancala/models/Side.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/me/mancala/models/Side.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/me/mancala/models/SmallPit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/me/mancala/models/SmallPit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/me/mancala/resources/GameResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/me/mancala/resources/GameResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/me/mancala/resources/MoveResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/me/mancala/resources/MoveResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/me/mancala/resources/requests/CreateGameRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/me/mancala/resources/requests/CreateGameRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/me/mancala/resources/requests/MoveRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/me/mancala/resources/requests/MoveRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/me/mancala/views/GameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/me/mancala/views/GameView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/me/mancala/views/game.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/me/mancala/views/game.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/me/mancala/gameplay/Fixtures.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/me/mancala/gameplay/Fixtures.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/me/mancala/gameplay/MoveExecutorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/me/mancala/gameplay/MoveExecutorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/me/mancala/models/BoardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/me/mancala/models/BoardTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +40,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -22,6 +51,9 @@
     </option>
   </component>
   <component name="ProjectId" id="1bp4BAC7siDQ29IZJ6pbG23osrj" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -29,9 +61,133 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="$PROJECT_DIR$/src/main/resources/com/me/mancala/views" />
+      <recent name="$PROJECT_DIR$/target/classes/com/me/mancala/views" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.MainApplication">
+    <configuration name="MainApplication" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.me.mancala.MainApplication" />
+      <module name="Mancala" />
+      <option name="PROGRAM_PARAMETERS" value="server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.me.mancala.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BoardTest.testNextPit" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Mancala" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.me.mancala.models.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.me.mancala.models" />
+      <option name="MAIN_CLASS_NAME" value="com.me.mancala.models.BoardTest" />
+      <option name="METHOD_NAME" value="testNextPit" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BoardTest.testOppositePit" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Mancala" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.me.mancala.models.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.me.mancala.models" />
+      <option name="MAIN_CLASS_NAME" value="com.me.mancala.models.BoardTest" />
+      <option name="METHOD_NAME" value="testOppositePit" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameTest.testNextPlayerTurn" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Mancala" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.me.mancala.models.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.me.mancala.models" />
+      <option name="MAIN_CLASS_NAME" value="com.me.mancala.models.GameTest" />
+      <option name="METHOD_NAME" value="testNextPlayerTurn" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SideTest.testEmptySide" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Mancala" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.me.mancala.models.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.me.mancala.models" />
+      <option name="MAIN_CLASS_NAME" value="com.me.mancala.models.SideTest" />
+      <option name="METHOD_NAME" value="testEmptySide" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.me.mancala in Mancala" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Mancala" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.me.mancala.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.me.mancala" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.MainApplication" />
+      <item itemvalue="JUnit.GameTest.testNextPlayerTurn" />
+      <item itemvalue="JUnit.SideTest.testEmptySide" />
+      <item itemvalue="JUnit.BoardTest.testOppositePit" />
+      <item itemvalue="JUnit.BoardTest.testNextPit" />
+      <item itemvalue="JUnit.com.me.mancala in Mancala" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.com.me.mancala in Mancala" />
+        <item itemvalue="JUnit.SideTest.testEmptySide" />
+        <item itemvalue="JUnit.GameTest.testNextPlayerTurn" />
+        <item itemvalue="JUnit.BoardTest.testNextPit" />
+        <item itemvalue="JUnit.BoardTest.testOppositePit" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -51,9 +207,99 @@
       <screen x="0" y="23" width="1384" height="877" />
     </state>
     <state x="292" y="128" key="#Project_Structure/0.23.1384.877@0.23.1384.877" timestamp="1589316788673" />
+    <state x="156" y="125" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589839211775">
+      <screen x="0" y="23" width="1384" height="877" />
+    </state>
+    <state x="156" y="125" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1384.877@0.23.1384.877" timestamp="1589839211775" />
+    <state x="100" y="123" width="1184" height="677" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1589670712880">
+      <screen x="0" y="23" width="1384" height="877" />
+    </state>
+    <state x="100" y="123" width="1184" height="677" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.23.1384.877@0.23.1384.877" timestamp="1589670712880" />
+    <state x="505" y="172" key="#com.intellij.ide.util.MemberChooser" timestamp="1589928977270">
+      <screen x="0" y="23" width="1384" height="877" />
+    </state>
+    <state x="505" y="172" key="#com.intellij.ide.util.MemberChooser/0.23.1384.877@0.23.1384.877" timestamp="1589928977270" />
+    <state x="454" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1589822594424">
+      <screen x="0" y="23" width="1384" height="877" />
+    </state>
+    <state x="454" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1384.877@0.23.1384.877" timestamp="1589822594424" />
+    <state x="100" y="123" width="1184" height="677" key="DiffContextDialog" timestamp="1589840553928">
+      <screen x="0" y="23" width="1384" height="877" />
+    </state>
+    <state x="100" y="123" width="1184" height="677" key="DiffContextDialog/0.23.1384.877@0.23.1384.877" timestamp="1589840553928" />
+    <state width="1342" height="294" key="GridCell.Tab.0.bottom" timestamp="1589931558712">
+      <screen x="0" y="23" width="1384" height="877" />
+    </state>
+    <state width="1342" height="294" key="GridCell.Tab.0.bottom/0.23.1384.877@0.23.1384.877" timestamp="1589931558712" />
+    <state width="1342" height="294" key="GridCell.Tab.0.center" timestamp="1589931558711">
+      <screen x="0" y="23" width="1384" height="877" />
+    </state>
+    <state width="1342" height="294" key="GridCell.Tab.0.center/0.23.1384.877@0.23.1384.877" timestamp="1589931558711" />
+    <state width="1342" height="294" key="GridCell.Tab.0.left" timestamp="1589931558710">
+      <screen x="0" y="23" width="1384" height="877" />
+    </state>
+    <state width="1342" height="294" key="GridCell.Tab.0.left/0.23.1384.877@0.23.1384.877" timestamp="1589931558710" />
+    <state width="1342" height="294" key="GridCell.Tab.0.right" timestamp="1589931558711">
+      <screen x="0" y="23" width="1384" height="877" />
+    </state>
+    <state width="1342" height="294" key="GridCell.Tab.0.right/0.23.1384.877@0.23.1384.877" timestamp="1589931558711" />
+    <state width="1342" height="285" key="GridCell.Tab.1.bottom" timestamp="1589922407055">
+      <screen x="0" y="23" width="1384" height="877" />
+    </state>
+    <state width="1342" height="285" key="GridCell.Tab.1.bottom/0.23.1384.877@0.23.1384.877" timestamp="1589922407055" />
+    <state width="1342" height="285" key="GridCell.Tab.1.center" timestamp="1589922407054">
+      <screen x="0" y="23" width="1384" height="877" />
+    </state>
+    <state width="1342" height="285" key="GridCell.Tab.1.center/0.23.1384.877@0.23.1384.877" timestamp="1589922407054" />
+    <state width="1342" height="285" key="GridCell.Tab.1.left" timestamp="1589922407054">
+      <screen x="0" y="23" width="1384" height="877" />
+    </state>
+    <state width="1342" height="285" key="GridCell.Tab.1.left/0.23.1384.877@0.23.1384.877" timestamp="1589922407054" />
+    <state width="1342" height="285" key="GridCell.Tab.1.right" timestamp="1589922407055">
+      <screen x="0" y="23" width="1384" height="877" />
+    </state>
+    <state width="1342" height="285" key="GridCell.Tab.1.right/0.23.1384.877@0.23.1384.877" timestamp="1589922407055" />
     <state x="230" y="125" key="Maven.ArtifactSearchDialog" timestamp="1589315593399">
       <screen x="0" y="23" width="1384" height="877" />
     </state>
     <state x="230" y="125" key="Maven.ArtifactSearchDialog/0.23.1384.877@0.23.1384.877" timestamp="1589315593399" />
+    <state x="201" y="100" key="SettingsEditor" timestamp="1589835792364">
+      <screen x="0" y="23" width="1384" height="877" />
+    </state>
+    <state x="201" y="100" key="SettingsEditor/0.23.1384.877@0.23.1384.877" timestamp="1589835792363" />
+    <state x="355" y="225" width="673" height="472" key="find.popup" timestamp="1589925179126">
+      <screen x="0" y="23" width="1384" height="877" />
+    </state>
+    <state x="355" y="225" width="673" height="472" key="find.popup/0.23.1384.877@0.23.1384.877" timestamp="1589925179126" />
+    <state x="357" y="112" width="670" height="676" key="search.everywhere.popup" timestamp="1589930158674">
+      <screen x="0" y="23" width="1384" height="877" />
+    </state>
+    <state x="357" y="112" width="670" height="676" key="search.everywhere.popup/0.23.1384.877@0.23.1384.877" timestamp="1589930158674" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/me/mancala/gameplay/GameInitializerTest.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/me/mancala/gameplay/GameDbTest.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/me/mancala/gameplay/GameDbTest.java</url>
+          <line>12</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/me/mancala/models/BoardTest.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

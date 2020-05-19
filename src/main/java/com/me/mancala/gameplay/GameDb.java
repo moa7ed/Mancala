@@ -5,8 +5,10 @@ import org.yaml.snakeyaml.constructor.DuplicateKeyException;
 
 import javax.annotation.Nonnull;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 // Just a in memory cache for simplicity
 public class GameDb {
@@ -36,5 +38,10 @@ public class GameDb {
             throw new IllegalArgumentException(String.format("Game %s is not exist", gameId));
         }
         return gameCache.get(gameId);
+    }
+
+    @Nonnull
+    public synchronized List<UUID> listAllGames() {
+        return gameCache.values().stream().map(Game::getUuid).collect(Collectors.toList());
     }
 }

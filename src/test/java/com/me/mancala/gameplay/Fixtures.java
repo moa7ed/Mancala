@@ -4,6 +4,7 @@ import com.github.javafaker.Faker;
 import com.me.mancala.models.Board;
 import com.me.mancala.models.Game;
 import com.me.mancala.models.Player;
+import com.me.mancala.models.Side;
 
 public class Fixtures {
     private final static Faker faker = new Faker();
@@ -20,5 +21,9 @@ public class Fixtures {
 
     public static Board testBoard() {
         return testGame().getBoard();
+    }
+
+    public static Side testSide() {
+        return testGame().getBoard().getLowerSide();
     }
 }

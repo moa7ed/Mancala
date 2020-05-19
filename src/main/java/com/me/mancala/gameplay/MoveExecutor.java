@@ -49,11 +49,29 @@ public class MoveExecutor {
         int stones = pit.getStones();
         Pit nextPit = pit;
         while (stones > 0) {
-            nextPit = this.game.getBoard().nextPit(player, nextPit);
+            nextPit = nextPitInDistribution(player, nextPit);
             stoneTransitions.add(new StoneTransition(pit, nextPit, 1));
             stones--;
         }
         return stoneTransitions;
+    }
+
+    private Pit nextPitInDistribution(Player player, Pit pit) {
+        Pit toPit;
+        if (pit instanceof LargePit) {
+            toPit = this.game.getBoard().oppositeSide(pit.getSide()).getPit(0);
+        } else {
+            if (pit.getIndex() == pit.getSide().getPits().length - 1) { // last playable Pit
+                toPit = pit.getSide().getLargePit();
+            } else {
+                toPit = pit.getSide().getPit(pit.getIndex() + 1);
+            }
+        }
+        // other player Mancala (skip)
+        if (toPit instanceof LargePit && toPit.getSide().getPlayer() != player) {
+            return nextPitInDistribution(player, toPit);
+        }
+        return toPit;
     }
 
     private void appendLastBitSpecialCase(@Nonnull Player player, @Nonnull List<StoneTransition> stoneTransitions) {
@@ -74,8 +92,13 @@ public class MoveExecutor {
     }
 
     private void updateCurrentPlayer(@Nonnull Player player, @Nonnull List<StoneTransition> stoneTransitions) {
-        Pit lastPit = stoneTransitions.get(stoneTransitions.size() - 1).getTo();
-        if (lastPit instanceof LargePit && lastPit.getSide().getPlayer() == player) {
+        StoneTransition lastTransition = stoneTransitions.get(stoneTransitions.size() - 1);
+        Pit lastPit = lastTransition.getTo();
+        if (
+                lastPit instanceof LargePit
+                && lastPit.getSide().getPlayer() == player
+                && lastTransition.getFrom().getSide().getPlayer() == player // not the special case collection
+        ) {
             return; // player should play again
         }
         this.game.nextPlayerTurn();

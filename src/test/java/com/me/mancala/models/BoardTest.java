@@ -41,16 +41,10 @@ public class BoardTest {
 
         RuntimeException thrown = assertThrows(
                 RuntimeException.class,
-                () -> board.oppositePit(board.getLowerSide().getPit(6)),
+                () -> board.oppositePit(board.getLowerSide().getLargePit()),
                 "Exception should be thrown"
         );
         Assert.assertTrue(thrown.getMessage().contains("This function only accept smallPit"));
     }
 
-    @Test
-    public void testNextPit() {
-        Side lowerSide = board.getLowerSide();
-        Side upperSide = board.getUpperSide();
-        Assert.assertEquals(lowerSide.getPit(2), board.nextPit(lowerSide.getPlayer(), lowerSide.getPit(1)));
-    }
 }

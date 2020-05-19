@@ -35,7 +35,7 @@ public class MoveExecutorTest {
              |7|7|6|6|0|7|
         * */
 
-        Move move = new Move(game.getUuid(), 0, 4);
+        Move move = new Move( 0, 4);
         List<StoneTransition> stoneTransitions = moveExecutor.applyMove(move);
 
         Assert.assertEquals(7, game.getBoard().getLowerSide().getPit(0).getStones());
@@ -74,7 +74,7 @@ public class MoveExecutorTest {
              |0|1|0|6|6|6|
         * */
 
-        Move move = new Move(game.getUuid(), 0, 0);
+        Move move = new Move(0, 0);
         moveExecutor.applyMove(move);
 
         Assert.assertEquals(0, game.getBoard().getLowerSide().getPit(0).getStones());
@@ -92,7 +92,7 @@ public class MoveExecutorTest {
         Player upper = game.getBoard().getUpperSide().getPlayer();
         Assert.assertEquals(lower, game.getCurrentPlayer());
 
-        Move move = new Move(game.getUuid(), 0, 2);
+        Move move = new Move(0, 2);
         moveExecutor.applyMove(move);
         Assert.assertEquals(upper, game.getCurrentPlayer());
     }
@@ -119,7 +119,7 @@ public class MoveExecutorTest {
 
         Assert.assertFalse(game.isGameOver());
 
-        Move move = new Move(game.getUuid(), 1, 5);
+        Move move = new Move(1, 5);
         moveExecutor.applyMove(move);
 
         Assert.assertTrue(game.isGameOver());
@@ -136,7 +136,7 @@ public class MoveExecutorTest {
 
     @Test
     public void testWrongPlayerTurnMove() {
-        Move move = new Move(game.getUuid(), 1, 5);
+        Move move = new Move(1, 5);
         IllegalAccessException thrown = assertThrows(
                 IllegalAccessException.class,
                 () -> moveExecutor.applyMove(move),
@@ -148,7 +148,7 @@ public class MoveExecutorTest {
     @Test
     public void testMoveEmptyPit() {
         game.getBoard().getLowerSide().getPit(0).setStones(0);
-        Move move = new Move(game.getUuid(), 0, 0);
+        Move move = new Move(0, 0);
         IllegalAccessException thrown = assertThrows(
                 IllegalAccessException.class,
                 () -> moveExecutor.applyMove(move),

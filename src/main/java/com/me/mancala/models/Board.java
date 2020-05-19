@@ -7,11 +7,12 @@ public class Board {
     private final Side upperSide;
     @Nonnull
     private final Side lowerSide;
-    public static final int PITS_PER_SIDE = 6;
+    private final int pitsPerSide;
 
-    public Board(@Nonnull Side lowerSide, @Nonnull Side upperSide) {
+    public Board(@Nonnull Side lowerSide, @Nonnull Side upperSide, int pitsPerSide) {
         this.lowerSide = lowerSide;
         this.upperSide = upperSide;
+        this.pitsPerSide = pitsPerSide;
     }
 
     @Nonnull
@@ -49,22 +50,7 @@ public class Board {
         if (pit instanceof LargePit) {
             throw new RuntimeException("This function only accept smallPit");
         }
-        return oppositeSide(pit.getSide()).getPit(PITS_PER_SIDE - pit.getIndex() - 1);
+        return oppositeSide(pit.getSide()).getPit(this.pitsPerSide - pit.getIndex() - 1);
     }
-
-    public Pit nextPit(Player player, Pit pit) {
-        Pit toPit = pit;
-        if (toPit instanceof LargePit) {
-            toPit = this.oppositeSide(toPit.getSide()).getPit(0);
-        } else {
-            toPit = toPit.getSide().getPit(toPit.getIndex() + 1);
-        }
-        // other player Mancala (skip)
-        if (toPit instanceof LargePit && toPit.getSide().getPlayer() != player) {
-            return nextPit(player, toPit);
-        }
-        return toPit;
-    }
-
 
 }

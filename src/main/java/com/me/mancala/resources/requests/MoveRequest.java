@@ -1,5 +1,6 @@
 package com.me.mancala.resources.requests;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.dropwizard.validation.MaxSize;
 import io.dropwizard.validation.MinSize;
@@ -21,6 +22,7 @@ public class MoveRequest {
     @JsonProperty("pit_index")
     private int pitIndex;
 
+    @JsonCreator
     public MoveRequest(
             @Nonnull @JsonProperty("game_id") UUID gameId,
             @Nonnull @JsonProperty("side_index") int sideIndex,
@@ -29,5 +31,17 @@ public class MoveRequest {
         this.gameId = gameId;
         this.sideIndex = sideIndex;
         this.pitIndex = pitIndex;
+    }
+
+    public UUID getGameId() {
+        return gameId;
+    }
+
+    public int getSideIndex() {
+        return sideIndex;
+    }
+
+    public int getPitIndex() {
+        return pitIndex;
     }
 }

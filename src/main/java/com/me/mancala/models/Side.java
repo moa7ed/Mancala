@@ -4,21 +4,23 @@ import javax.annotation.Nonnull;
 
 public class Side {
     @Nonnull
-    private final Pit[] pits;
+    private final Pit[] playablePits;
+    @Nonnull
+    private final Pit largePit;
     @Nonnull
     private final Player player;
 
-    public Side(int pitsPerSide, @Nonnull Player player) {
-        this.pits = new Pit[pitsPerSide + 1]; // 1 more for the largePit
+    public Side(int pitsPerSide, int stonesPerPit, @Nonnull Player player) {
+        this.playablePits = new SmallPit[pitsPerSide];
         for (int i = 0; i < pitsPerSide; i++) {
-            this.pits[i] = new SmallPit(this, i);
+            this.playablePits[i] = new SmallPit(stonesPerPit, this, i);
         }
-        this.pits[pitsPerSide] = new LargePit(this, pitsPerSide);
+        this.largePit = new LargePit(this, pitsPerSide);
         this.player = player;
     }
 
     public Pit[] getPits() {
-        return pits;
+        return this.playablePits;
     }
 
     @Nonnull
@@ -27,18 +29,15 @@ public class Side {
     }
 
     public Pit getPit(int pitIndex) {
-        return this.pits[pitIndex];
+        return this.playablePits[pitIndex];
     }
 
     public Pit getLargePit() {
-        return this.pits[pits.length - 1];
+        return this.largePit;
     }
 
     public boolean isEmpty() {
-        for (Pit pit : this.pits) {
-            if (pit instanceof LargePit) {
-                continue;
-            }
+        for (Pit pit : this.playablePits) {
             if (!pit.isEmpty()) {
                 return false;
             }
